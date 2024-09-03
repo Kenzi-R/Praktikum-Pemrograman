@@ -3,8 +3,13 @@ using namespace std;
 
     int main(){
     double a,b,c;
-    cin>>a>>b>>c;
-    int d=(b*b)-(4*a*c);
+    cout<<"input a=";
+    cin>>a;
+    cout<<"input b=";
+    cin>>b;
+    cout<<"input c=";
+    cin>>c;
+    double d=(b*b)-(4*a*c);
     double x1,x2,x;
         if(d>0){
         x1=((-b)+(sqrt(d)))/(2*a);
