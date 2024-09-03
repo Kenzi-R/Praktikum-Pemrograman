@@ -20,16 +20,5 @@ using namespace std;
     }
 
 
-// Payslip for Employee
-// ---------------------
-// Name: John Doe
-// Gross Salary: Rp15.000.000,00
-// Tax (20%): Rp3.000.000,00
-// Installment: Rp200.000,00
-// Insurance: Rp150.000,00
-// Net Salary: Rp11.650.000,00
 
-// Kenji Ratanaputra
-// 15000000
-// 200000
-// 150000
+
