@@ -3,7 +3,7 @@ using namespace std;
 
     int main(){
         string name;
-        int salary,tax,installment,insurance,net;
+        double salary,tax,installment,insurance,net;
         getline(cin,name);
         cin>>salary>>installment>>insurance;
         tax=salary*1/5;
