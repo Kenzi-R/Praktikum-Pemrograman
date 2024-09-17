@@ -8,5 +8,5 @@ using namespace std;
         for(int i=1;i<=n;i++){
             ans+=i;         
         }
-        cout<<"Output: ";cout<<ans;
+        cout<<"Output: ";cout<<ans<<endl;
     }
