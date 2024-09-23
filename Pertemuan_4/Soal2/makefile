@@ -2,14 +2,14 @@
 CXX = g++
 CXXFLAGS = -Wall
 TARGET = soal2
-TARGETTEST = test_soal2
+TARGETTEST = testsoal2
 SRC = soal2.cpp
-SRCTEST = test_soal2.cpp
+SRCTEST = testsoal2.cpp
 
 # Default target: compile the program
 all: $(TARGET)
 
-# Compile the sum.cpp 	
+# Compile the Program 	
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
