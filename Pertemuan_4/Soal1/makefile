@@ -2,9 +2,9 @@
 CXX = g++
 CXXFLAGS = -Wall
 TARGET = soal1
-TARGETTEST = test_soal1
+TARGETTEST = testsoal1
 SRC = soal1.cpp
-SRCTEST = test_soal1.cpp
+SRCTEST = testsoal1.cpp
 
 # Default target: compile the program
 all: $(TARGET)
