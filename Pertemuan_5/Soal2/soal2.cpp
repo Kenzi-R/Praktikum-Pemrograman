@@ -22,8 +22,3 @@ using namespace std;
             cout<<v[i]<<" ";
         }
     }
-
-// 0 1 2 3 4
-// 1 2 3 4 5
-
-// 9 5 6 7 3
