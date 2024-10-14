@@ -1,10 +1,10 @@
 # Variables
 CXX = g++
 CXXFLAGS = -Wall
-TARGET = soal1
-TARGETTEST = test_soal1
-SRC = soal1.cpp
-SRCTEST = test_soal1.cpp
+TARGET = Task_5
+TARGETTEST = Test_5
+SRC = Task_5.cpp
+SRCTEST = Test_5.cpp
 
 # Default target: compile the program
 all: $(TARGET)

@@ -20,13 +20,12 @@ using namespace std;
         }
         //Mengecek bilangan jika tidak habis dibagi 3 atau 5
         else{
-            string temp=to_string(i);
-            v.pb(temp);
+            string res=to_string(i);
+            v.pb(res);
         }
     }
         for(int i=0;i<100;i++){
             temp+=v[i];
-            temp+='\n';
         }
         return temp;
     }
@@ -47,7 +46,7 @@ using namespace std;
     }
     
     int main(){
-    ifstream test("Test.txt");
+    ifstream test("test.txt");
 	if(!test){
         cout<<"File input tidak ditemukan.";
         return 1;
@@ -59,8 +58,11 @@ using namespace std;
         while(getline(test,input)){
             //Fizzbuzz
             if(!fizzbuzz){
-                output+=input;output+="\n";
+                output+=input;
+                output+="\n";
                 if(idx==100){
+                    // cout<<output;
+                    // cout<<Fizzbuzz();
                     if(output==Fizzbuzz()){
                         cout<<"Testcase "<<test_num<<" Success"<<endl;
                     }

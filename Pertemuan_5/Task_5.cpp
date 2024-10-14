@@ -29,25 +29,33 @@ void Fizzbuzz(){
         }
     }
 
-void Reverse(){
-        int n;
-        vector<int>v;
-        //Input nilai kedalam vector
-        while(cin>>n){
-            v.pb(n);
-        }
-        int mx=v.size();
-        //Reversing array
-        for(int i=0;i<=mx/2;i++){
-            int temp=v[i];
-            v[i]=v[mx-i-1];
-            v[mx-i-1]=temp;
-        }
-        //Output semua isi dalam array
-        for(int i=0;i<mx;i++){
-            cout<<v[i]<<" ";
+void Reverse() {
+    string n;
+    vector<string> v;
+    cin >> n;
+    if (n == "[") {
+        while (cin >> n) {
+            if (n != "]") {
+                v.pb(n);
+            } 
+            else {
+                int mx=v.size();
+                // Reverse the vector using swap
+                for (int i=0;i<mx/2;i++) {
+                    swap(v[i], v[mx-i-1]);
+                }
+                // Output the reversed vector
+                cout<<"[ ";
+                for (int i=0;i<mx;i++) {
+                    cout<<v[i]<<" ";
+                }
+                cout<<"]";
+                cout<<endl;
+            }
         }
     }
+}
+
 
 int main(){
     cout<<"Ketik Nomor Program yang ingin dijalankan"<<endl;
