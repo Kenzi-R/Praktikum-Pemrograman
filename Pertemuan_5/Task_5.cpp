@@ -51,6 +51,7 @@ void Reverse() {
                 }
                 cout<<"]";
                 cout<<endl;
+                break;
             }
         }
     }
