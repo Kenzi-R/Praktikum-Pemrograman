@@ -3,30 +3,27 @@
 using namespace std;
 
     string Fizzbuzz(){
-        vector<string>v;
         string temp;
         for(int i=1;i<=100;i++){
         //Mengecek bilangan habis dibagi 3 tapi tidak habis dibagi 5
         if(i%3==0 && i%5!=0){   
-            v.pb("Fizz");
+            temp+="Fizz";
         }
         //Mengecek bilangan habis dibagi 5 tapi tidak habis dibagi 3
         else if(i%3!=0 && i%5==0){
-            v.pb("Buzz");
+            temp+=("Buzz");
         }
         //Mengecek bilangan habis dibagi 3 dan 5
         else if(i%3==0 && i%5==0){
-            v.pb("FizzBuzz");
+            temp+=("FizzBuzz");
         }
         //Mengecek bilangan jika tidak habis dibagi 3 atau 5
         else{
             string res=to_string(i);
-            v.pb(res);
+            temp+=(res);
+        
         }
     }
-        for(int i=0;i<100;i++){
-            temp+=v[i];
-        }
         return temp;
     }
 
@@ -59,11 +56,14 @@ using namespace std;
             //Fizzbuzz
             if(!fizzbuzz){
                 output+=input;
-                output+="\n";
-                if(idx==100){
-                    // cout<<output;
-                    // cout<<Fizzbuzz();
-                    if(output==Fizzbuzz()){
+                bool cek=1;
+                string temp=Fizzbuzz();
+                for(int i=0;i<output.length()-1;i++){
+                    if(output[i]!=temp[i]){
+                        cek=0;
+                    }
+                }
+                    if(cek){
                         cout<<"Testcase "<<test_num<<" Success"<<endl;
                     }
                     else{
@@ -72,8 +72,7 @@ using namespace std;
                     idx=0;
                     fizzbuzz=1;
                     test_num++;
-                }
-                idx++;
+                    idx++;
             }
             //Reverse
             else{  
