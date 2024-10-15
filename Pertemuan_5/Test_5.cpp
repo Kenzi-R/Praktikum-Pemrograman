@@ -58,7 +58,8 @@ using namespace std;
                 output+=input;
                 bool cek=1;
                 string temp=Fizzbuzz();
-                for(int i=0;i<output.length()-1;i++){
+                int x=output.length();
+                for(int i=0;i<x-1;i++){
                     if(output[i]!=temp[i]){
                         cek=0;
                     }
