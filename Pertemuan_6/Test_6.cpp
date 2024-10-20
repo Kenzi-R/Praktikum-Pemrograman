@@ -17,6 +17,7 @@ using namespace std;
         stringstream ss;
         ss<<fixed<<setprecision(2)<<med;
         string ans=ss.str();
+        ans+='\n';
         return ans;
     }
 
@@ -26,7 +27,17 @@ using namespace std;
            sum+=data[i].jumlah;
         }
         string ans=to_string(sum);
+        ans+='\n';
         return ans;
+    }
+
+    bool cek(string s1, string s2){
+        for(int i=0;i<s1.length()-1;i++){
+            if(s1[i]!=s2[i]){
+                return false;
+            }
+        }
+        return true;
     }
 
     void output(bool ans,int test_num){
@@ -41,6 +52,7 @@ using namespace std;
 int main(){
     swalayan data[55];
     ifstream test("Test.txt");
+    bool yes=true;
 	if(!test){
         cout<<"File input tidak ditemukan.";
         return 1;
@@ -49,14 +61,11 @@ int main(){
         int test_num=1, line=1,n,i=1,j=1;
         string input;
         while(getline(test,input)){
-            // cout<<"Input "<<line<<" = "<<input<<endl;
             if(line==1){
                 n=stoi(input);
             }
             //Input
             else if(line<=(1+(n*4))){
-                // cout<<"Masuk="<<line<<endl;
-
                 if(i==1){
                     data[j].kode=input;
                     i++;
@@ -73,20 +82,22 @@ int main(){
                     data[j].jumlah=stoi(input);
                     i=1;
                     j++;
-                    // cout<<i<<" "<<j<<endl;
                 }
             }
-            // Hasil
             else{
-                bool yes=true;
                 if(line%2==0){
-                    if(ttl(data,n)!=input){
+                    string x=ttl(data,n);
+                    if(!cek(x,input)){
                         yes=false;
+                        cout<<x<<endl;
+                        cout<<input<<endl;
                     }
                 }   
                 else{
-                    if(rata(data,n)!=input){
-                        cout<<rata(data,n)<<endl;
+                    string x=rata(data,n);
+                    if(!cek(x,input)){
+                        cout<<x<<endl;
+                        cout<<input<<endl;
                         yes=false;
                     }
                     output(yes,test_num);
