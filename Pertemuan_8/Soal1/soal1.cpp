@@ -17,8 +17,5 @@ using namespace std;
         cout<<"Masukkan urutan bilangan fibonaci yang ingin dicari adalah ";
         int n;cin>>n;
         cout<<"Bilangan fibonaci pada urutan ke-"<<n<<" adalah ";
-        // while(n--){
-            // int x;cin>>x;
             cout<<fib(n)<<endl;
-        // }
     }
