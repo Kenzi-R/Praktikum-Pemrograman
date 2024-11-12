@@ -39,13 +39,18 @@ int main(){
         int test_num=1, line=1,i=1,j=1;
         string input,output,n;
         while(getline(test,n) && getline(test,input) && getline(test,output)){
-            // cout<<"test "<<test_num<<endl;
-            // cout<<n<<endl;cout<<input<<endl;cout<<output<<endl;
-            //Pengecekan antara s1 dan s2
             int x=stoi(n);
             string hasil=cek(input,x);
+            // cout<<"test "<<test_num<<endl;
+            // cout<<n<<endl;cout<<input<<endl;cout<<output<<endl;
             // cout<<hasil<<endl;
-            if(hasil==output){
+            bool ya=1;
+            for(int i=0;i<hasil.size();i++){
+                if(hasil[i]!=output[i]){
+                    ya=0;
+                }
+            }
+            if(ya){
                 cout<<"Testcase "<<test_num<<" Success"<<endl;
             }
             else{

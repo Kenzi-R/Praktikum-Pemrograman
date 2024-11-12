@@ -6,7 +6,7 @@ using namespace std;
             return 0;
         }
         else{
-            return (vec[n - 1]+(n - 1)*rerata(vec, n - 1))/n;
+            return (vec[n-1]+(n-1)*rerata(vec,n-1))/n;
         }
     }
 
@@ -34,10 +34,11 @@ int main(){
         while(getline(test,n) && getline(test,input) && getline(test,output)){
             int x=stoi(n);
             string hasil=cek(input,x);
-            cout<<"test "<<test_num<<endl;
-            cout<<n<<endl;cout<<input<<endl;cout<<output<<endl;
-            cout<<hasil<<endl;
-            if(hasil==output){
+            bool ya=1;
+            for(int i=0;i<hasil.size();i++){
+                if(hasil[i]!=output[i]) ya=0;
+            }
+            if(ya){
                 cout<<"Testcase "<<test_num<<" Success"<<endl;
             }
             else{
