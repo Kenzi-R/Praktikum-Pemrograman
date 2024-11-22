@@ -10,7 +10,7 @@ using namespace std;
     void insert_nilai(mhs data[]){
         for(int i=0;i<7;i++){
             int j=i;
-            while(j>=1 && data[j].nilai > data[j-1].nilai){
+            while(j>=1 && data[j].nilai < data[j-1].nilai){
                 swap(data[j],data[j-1]);
                 j--;
             }
@@ -26,7 +26,7 @@ using namespace std;
     void insert_NISN(mhs data[]){
         for(int i=0;i<7;i++){
             int j=i;
-            while(j>=1 && data[j].NISN > data[j-1].NISN){
+            while(j>=1 && data[j].NISN < data[j-1].NISN){
                 swap(data[j],data[j-1]);
                 j--;
             }
@@ -42,7 +42,7 @@ using namespace std;
     void bubble_nilai(mhs data[]){
         for(int i=0;i<7;i++){
             for(int j=0;j<7;j++){
-                if(j-1>=0 && data[j].nilai > data[j-1].nilai){
+                if(j-1>=0 && data[j].nilai < data[j-1].nilai){
                     swap(data[j],data[j-1]);
                 }
             }
@@ -58,7 +58,7 @@ using namespace std;
     void bubble_NISN(mhs data[]){
         for(int i=0;i<7;i++){
             for(int j=0;j<7;j++){
-                if(j-1>=0 && data[j].NISN > data[j-1].NISN){
+                if(j-1>=0 && data[j].NISN < data[j-1].NISN){
                     swap(data[j],data[j-1]);
                 }
             }
@@ -75,7 +75,7 @@ using namespace std;
         for(int i=0;i<7;i++){
             int temp=i;
             for(int j=i+1;j<7;j++){
-                if(data[temp].nilai < data[j].nilai){
+                if(data[temp].nilai > data[j].nilai){
                     temp=j;
                 }
             }
@@ -93,7 +93,7 @@ using namespace std;
         for(int i=0;i<7;i++){
             int temp=i;
             for(int j=i+1;j<7;j++){
-                if(data[temp].NISN < data[j].NISN){
+                if(data[temp].NISN > data[j].NISN){
                     temp=j;
                 }
             }
@@ -202,14 +202,7 @@ using namespace std;
         }    
         else if(x==3){
             for(int i=0;i<7;i++){
-                int j=i;
-                while(j>0 && res[j].nilai > res[j-1].nilai){
-                    swap(res[j],res[j-1]);
-                    j--;
-                }
-            }
-            for(int i=0;i<7;i++){
-                if(res[i].nilai<=60){
+                if(res[i].nilai==60){
                     res[i].nama="Joko";
                 }
             }
